@@ -21,7 +21,7 @@ public class BaseConfiguration {
     @ConfigProperty(name = "che.workspace.id")
     protected String workspaceId;
     
-    @ConfigProperty(name = "che.machine.token")
+    @ConfigProperty(name = "che.machine.token", defaultValue = "")
     protected String machineToken;
 
     private HttpJsonRequestFactory requestFactory() {

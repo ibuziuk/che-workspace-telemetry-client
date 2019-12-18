@@ -177,7 +177,7 @@ public abstract class AbstractAnalyticsManager {
       workspaceName = null;
     }
 
-    if (machineToken != null) {
+    if (machineToken != null && ! machineToken.isEmpty()) {
       try {
       JwtParser jwtParser = Jwts.parser();
         String[] splitted = machineToken.split("\\.");
