@@ -21,8 +21,8 @@ public class SHA1HashGeneratorTest {
 
     @Test
     public void testHashGeneration() {
-        String hash = new SHA1HashGenerator().generateHash(TEST_USERNAME);
-        assertEquals(hash, EXPECTED_SHA1_HASH);
+        String hash = SHA1HashGenerator.generateHash(TEST_USERNAME);
+        assertEquals(EXPECTED_SHA1_HASH, hash);
     }
 
 }

@@ -18,18 +18,15 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import javax.inject.Singleton;
-
 import org.slf4j.Logger;
 
-@Singleton
 public class SHA1HashGenerator {
     private static final Logger LOG = getLogger(SHA1HashGenerator.class);
     private static final String SHA_1 = "SHA-1";
     private static final String UTF_8 = "utf8";
     private static final String HEX= "%040x";
 
-    public String generateHash(final String input) {
+    public static String generateHash(final String input) {
         String hash = null;
         MessageDigest digest;
         try {
