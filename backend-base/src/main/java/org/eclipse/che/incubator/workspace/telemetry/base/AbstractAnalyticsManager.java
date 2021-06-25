@@ -23,9 +23,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import javax.inject.Inject;
-
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableMap;
 
@@ -124,9 +121,6 @@ public abstract class AbstractAnalyticsManager {
   protected long debounceTimeMillis = 1500;
 
   private HttpJsonRequestFactory requestFactory;
-
-  @Inject
-  SHA1HashGenerator sha1HashGenerator;
 
   public abstract boolean isEnabled();
 
@@ -348,7 +342,7 @@ public abstract class AbstractAnalyticsManager {
       String generatedUserId = null;
       String username = getUserNameFromMachineToken(machineToken);
       if (username != null && !username.isEmpty()) {
-         generatedUserId = sha1HashGenerator.generateHash(username);
+         generatedUserId = SHA1HashGenerator.generateHash(username);
       }
       return generatedUserId;
   }
